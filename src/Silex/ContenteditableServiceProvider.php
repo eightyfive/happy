@@ -13,7 +13,7 @@ use Happy\ContenteditableService;
 use Happy\Twig\Extension\EditableExtension;
 
 use Happy\Twig\Extension\TransEditableExtension;
-use Happy\Twig\Extension\ClassEditableExtension;
+use Happy\Twig\Extension\EntityEditableExtension;
 use Happy\Editor\TransEditor;
 
 /**
@@ -58,7 +58,7 @@ class ContenteditableServiceProvider implements ServiceProviderInterface, Contro
 
         $app->extend('twig', function($twig, $app) {
             $twig->addExtension(new TransEditableExtension($app['content'], $app['translator']));
-            $twig->addExtension(new ClassEditableExtension($app['content']));
+            $twig->addExtension(new EntityEditableExtension($app['content']));
 
             return $twig;
         });

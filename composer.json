@@ -1,0 +1,19 @@
+{
+    "name": "eyf/happy",
+    "type": "library",
+    "description": "Contenteditable backend framework",
+    "authors": [
+        {
+            "name": "Benoit Sagols",
+            "email": "benoit.sagols@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Eyf\\Happy\\": "src/"
+        }
+    }
+}

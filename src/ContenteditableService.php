@@ -58,16 +58,6 @@ class ContenteditableService
     {
         return $this->routeParams;
     }
-    
-    public function isGranted()
-    {
-        return $this->isAuthenticated() && $this->security->isGranted('ROLE_ADMIN') !== false;
-    }
-
-    public function isAuthenticated()
-    {
-        return $this->security->getToken() && $this->security->getToken()->isAuthenticated();
-    }
 
     public function addEditor(ContentEditorInterface $editor)
     {

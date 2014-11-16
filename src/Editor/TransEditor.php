@@ -3,7 +3,7 @@ namespace Eyf\Happy\Editor;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-class TransEditor implements EditorInterface
+class TransEditor implements ContentEditorInterface
 {
     protected $translator;
     protected $resources = array();

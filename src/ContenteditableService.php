@@ -3,7 +3,7 @@ namespace Eyf\Happy;
 
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
-use Eyf\Happy\Editor\EditorInterface;
+use Eyf\Happy\Editor\ContentEditorInterface;
 
 class ContenteditableService
 {
@@ -69,7 +69,7 @@ class ContenteditableService
         return $this->security->getToken() && $this->security->getToken()->isAuthenticated();
     }
 
-    public function addEditor(EditorInterface $editor)
+    public function addEditor(ContentEditorInterface $editor)
     {
         $this->editors[$editor->getKey()] = $editor;
     }

@@ -7,12 +7,12 @@
     <div class="container">
         <a href="{{ path(content.prefix ~ '_logout') }}" class="btn btn-link">&times;</a>
         {% if content.editable %}
-        <form action="{{ path('_content_save', {pathname: content.pathname}) }}" method="POST" class="pull-right">
-            <a href="{{ path(content.routeName, content.routeParams) }}" data-action="exit" class="btn btn-default">Done</a>
+        <form action="{{ path('_content_save', {pathname: content.pathname}) }}" method="POST" class="save-form">
+            <a href="{{ path(content.routeName, content.routeParams) }}" data-action="exit" class="button secondary btn btn-default">Done</a>
             <button type="submit" class="btn btn-primary" data-action="save" disabled>Save changes</button>
         </form>
         {% else %}
-            <a href="{{ path('_content_edit', {pathname: request_pathname}) }}" class="btn btn-default pull-right">Edit Page</a>
+            <a href="{{ path('_content_edit', {pathname: request_pathname}) }}" class="button-edit button secondary btn btn-default">Edit Page</a>
         {% endif %}
     </div>
     {% if content.editable %}

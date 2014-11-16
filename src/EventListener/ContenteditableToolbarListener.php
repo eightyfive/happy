@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
-use Happy\ContenteditableService;
+use Eyf\Happy\ContenteditableService;
 /**
  * WebDebugToolbarListener injects the Web Debug Toolbar.
  *

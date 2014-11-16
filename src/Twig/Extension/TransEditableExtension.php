@@ -2,7 +2,7 @@
 
 namespace Eyf\Happy\Twig\Extension;
 
-use Happy\ContenteditableService;
+use Eyf\Happy\ContenteditableService;
 
 use Symfony\Component\Translation\TranslatorInterface;
 

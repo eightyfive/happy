@@ -3,7 +3,7 @@ namespace Eyf\Happy;
 
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
-use Happy\Editor\EditorInterface;
+use Eyf\Happy\Editor\EditorInterface;
 
 class ContenteditableService
 {

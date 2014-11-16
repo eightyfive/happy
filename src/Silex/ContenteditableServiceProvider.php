@@ -6,15 +6,15 @@ use Silex\ServiceProviderInterface;
 use Silex\ControllerProviderInterface;
 use Silex\ServiceControllerResolver;
 
-use Happy\Controller\ContenteditableController;
-use Happy\EventListener\ContenteditableListener;
-use Happy\EventListener\ContenteditableToolbarListener;
-use Happy\ContenteditableService;
-use Happy\Twig\Extension\EditableExtension;
+use Eyf\Happy\Controller\ContenteditableController;
+use Eyf\Happy\EventListener\ContenteditableListener;
+use Eyf\Happy\EventListener\ContenteditableToolbarListener;
+use Eyf\Happy\ContenteditableService;
+use Eyf\Happy\Twig\Extension\EditableExtension;
 
-use Happy\Twig\Extension\TransEditableExtension;
-use Happy\Twig\Extension\EntityEditableExtension;
-use Happy\Editor\TransEditor;
+use Eyf\Happy\Twig\Extension\TransEditableExtension;
+use Eyf\Happy\Twig\Extension\EntityEditableExtension;
+use Eyf\Happy\Editor\TransEditor;
 
 /**
  * Contenteditable Service provider.

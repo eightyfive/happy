@@ -38,16 +38,18 @@ body.contentedited .content-toolbar {
   font-size: 14px;
 }
 
+.content-toolbar .btn-primary {
+  background-color: #f6c43f;
+  border-color: #f6c43f;
+  color: #000;
+}
+
 .content-toolbar > .container {
   margin-bottom: 10px;
 }
 .caution-tape {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAMAAACDi47UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9sQ/IiIim2pwbQAAABNJREFUeNpiYIADRjgY0mIAAQYAKaQAZQPCk40AAAAASUVORK5CYII=) repeat-x 0 0;
   height: 10px;
-}
-.save-form,
-.button-edit {
-  float: right;
 }
 
 [data-editable]:hover {
@@ -59,12 +61,11 @@ body.contentedited .content-toolbar {
   cursor: text!important;
   background-color: inherit!important;
   color: inherit!important;
+  padding: 5px;
+  margin: -5px;
+  position: relative;
+  display: block;
 }
-
-[data-editable-datetime]:hover {
-  cursor: pointer!important;
-}
-
 
 address[data-editable]:hover,
 time[data-editable]:hover {

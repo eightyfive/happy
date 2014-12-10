@@ -1,8 +1,8 @@
 <?php
 
-namespace Eyf\Happy\Twig\Extension;
+namespace Happy\Twig\Extension;
 
-use Eyf\Happy\ContenteditableService;
+use Happy\ContenteditableService;
 
 use Symfony\Component\Translation\TranslatorInterface;
 

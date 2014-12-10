@@ -64,3 +64,9 @@ body.contentedited .content-toolbar {
 [data-editable-datetime]:hover {
   cursor: pointer!important;
 }
+
+
+address[data-editable]:hover,
+time[data-editable]:hover {
+  cursor: pointer!important;
+}

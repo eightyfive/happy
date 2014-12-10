@@ -1,8 +1,8 @@
 <?php
 
-namespace Eyf\Happy\Twig\Extension;
+namespace Happy\Twig\Extension;
 
-use Eyf\Happy\ContenteditableService;
+use Happy\ContenteditableService;
 
 /**
  * @author Benoit Sagols <benoit.sagols@gmail.com>
@@ -16,7 +16,7 @@ abstract class EditableExtension extends \Twig_Extension
         $this->content = $content;
     }
 
-    protected function renderEditableNode($content, $inputName, $type, $typeMode = null, $attributes = array())
+    protected function renderEditableNode($content, $inputName, $type, $typeMode = null)
     {
         if (!$this->content->isEditable()) {
             echo $content;
@@ -30,21 +30,35 @@ abstract class EditableExtension extends \Twig_Extension
         }
 
         $node = '<'.$tagName;
-        
-        $attrs['editable'] = null;
-        $attrs['editable-name'] = $inputName;
-        $attrs['editable-'.$type] = $typeMode;
 
-        $attrs = array_merge($attributes, $attrs);
-
-        foreach ($attrs as $name => $value) {
-            $node .= ' data-'.$name.($value ? '=\''.$value.'\'' : '');
-        }
-
+        $node .= $this->getAttributes($inputName, $type, $typeMode);
         $node .= '>';
         $node .= $content;
         $node .= '</'.$tagName.'>';
 
         echo $node;
+    }
+
+    protected function renderEditableAttributes($inputName, $type)
+    {
+        if (!$this->content->isEditable()) {
+            return;
+        }
+
+        echo $this->getAttributes($inputName, $type);
+    }
+
+    protected function getAttributes($inputName, $type, $typeMode = null)
+    {
+        $attrs = array();
+        $attrs['editable'] = $type;
+        $attrs['editable-name'] = $inputName;
+
+        $str = '';
+        foreach ($attrs as $name => $value) {
+            $str .= ' data-'.$name.($value ? '=\''.$value.'\'' : '');
+        }
+
+        return $str;
     }
 }

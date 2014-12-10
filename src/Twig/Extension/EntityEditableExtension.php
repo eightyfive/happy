@@ -1,9 +1,9 @@
 <?php
 
-namespace Happy\Twig\Extension;
+namespace Eyf\Happy\Twig\Extension;
 
-use Happy\ContenteditableService;
-use Happy\Behavior\Editable;
+use Eyf\Happy\ContenteditableService;
+use Eyf\Happy\Behavior\Editable;
 
 /**
  * @author Benoit Sagols <benoit.sagols@gmail.com>

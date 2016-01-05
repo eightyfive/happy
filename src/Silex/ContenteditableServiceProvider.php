@@ -26,6 +26,7 @@ class ContenteditableServiceProvider implements ServiceProviderInterface, Contro
     public function register(Application $app)
     {
         $app['contenteditable.prefix'] = '-';
+        $app['contenteditable.toolbar.menu'] = array();
 
         if (!isset($app['translator.resources'])) {
             $app['translator.resources'] = array();
@@ -38,8 +39,9 @@ class ContenteditableServiceProvider implements ServiceProviderInterface, Contro
         $app['contenteditable.listener'] = $app->share(function ($app) {
             return new ContenteditableListener($app['content']);
         });
+
         $app['contenteditable.toolbar.listener'] = $app->share(function ($app) {
-            return new ContenteditableToolbarListener($app['content'], $app['security'], $app['twig']);
+            return new ContenteditableToolbarListener($app['content'], $app['security'], $app['twig'], $app['contenteditable.toolbar.menu']);
         });
 
         $app['contenteditable.editor.trans'] = $app->share(function($app) {
@@ -53,7 +55,6 @@ class ContenteditableServiceProvider implements ServiceProviderInterface, Contro
         });
 
         $app['content'] = $app->share(function($app) {
-
             $content = new ContenteditableService($app['security'], $app['contenteditable.prefix']);
             $content->addEditor($app['contenteditable.editor.trans']);
 

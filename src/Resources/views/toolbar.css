@@ -37,7 +37,14 @@ body.contentedited .content-toolbar {
   font-family: Arial, sans-serif;
   font-size: 14px;
 }
-
+.content-toolbar__menu {
+  margin: 0;
+}
+.content-toolbar .btn-edit,
+.content-toolbar .btn-logout,
+.content-toolbar .form-save {
+  float: right;
+}
 .content-toolbar .btn-primary {
   background-color: #f6c43f;
   border-color: #f6c43f;

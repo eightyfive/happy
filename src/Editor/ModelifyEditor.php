@@ -9,7 +9,7 @@ class ModelifyEditor implements ContentEditorInterface
 
     public function getKey()
     {
-        return 'class';
+        return 'entity';
     }
 
     public function save(array $data)

@@ -1,0 +1,34 @@
+
+<style>
+{% include '@Contenteditable/assets/css/toolbar.css'%}
+</style>
+
+<div id="contentToolbar" class="content-toolbar">
+    <div class="container">
+        <a href="{{ path(content.prefix ~ '_logout') }}" class="btn btn-link">&times;</a>
+        {% if content.editable %}
+        <form action="{{ path('_content_save', {pathname: content.pathname}) }}" method="POST" class="pull-right">
+            <a href="{{ path(content.routeName, content.routeParams) }}" data-action="exit" class="btn btn-default">Done</a>
+            <button type="submit" class="btn btn-primary" data-action="save" disabled>Save changes</button>
+        </form>
+        {% else %}
+            <a href="{{ path('_content_edit', {pathname: request_pathname}) }}" class="btn btn-default pull-right">Edit Page</a>
+        {% endif %}
+    </div>
+    {% if content.editable %}
+    <div class="caution-tape"></div>
+    {% endif %}
+</div>
+
+<script>
+    $(document.body).addClass('contenteditor{% if content.editable %} contenteditable{% endif %}');
+</script>
+{% if content.editable %}
+<script>
+  {% include '@Contenteditable/assets/js/vendor/medium-editor-1.9.0.min.js' %}
+</script>
+{# <script src="/js/editable.js"></script> #}
+<script>
+  {% include '@Contenteditable/assets/js/editable.js' %}
+</script>
+{% endif %}

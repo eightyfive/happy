@@ -70,7 +70,7 @@ class ContenteditableServiceProvider implements ServiceProviderInterface, Contro
         }));
 
         $app['contenteditable.templates_path'] = function () {
-            $r = new \ReflectionClass('Happy\Silex\ContenteditableServiceProvider');
+            $r = new \ReflectionClass('Eyf\\Happy\\Silex\\ContenteditableServiceProvider');
 
             return dirname(dirname($r->getFileName())).'/Resources/views';
         };

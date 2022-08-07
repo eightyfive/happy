@@ -1,19 +1,17 @@
 {
-    "name": "eyf/happy",
-    "type": "library",
-    "description": "Contenteditable backend framework",
-    "authors": [
-        {
-            "name": "Benoit Sagols",
-            "email": "benoit.sagols@gmail.com"
-        }
-    ],
-    "require": {
-
-    },
-    "autoload": {
-        "psr-4": {
-            "Eyf\\Happy\\": "src/"
-        }
+  "name": "eyf/happy",
+  "type": "library",
+  "description": "Contenteditable backend framework",
+  "authors": [
+    {
+      "name": "0x55",
+      "email": "0xfiftyfive@gmail.com"
     }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Eyf\\Happy\\": "src/"
+    }
+  }
 }

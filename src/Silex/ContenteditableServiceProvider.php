@@ -25,7 +25,7 @@ class ContenteditableServiceProvider implements ServiceProviderInterface, Contro
 {
     public function register(Application $app)
     {
-        $app['contenteditable.prefix'] = 'content';
+        $app['contenteditable.prefix'] = '-';
 
         $app['contenteditable.controller'] = $app->share(function ($app) {
             return new ContenteditableController($app['kernel'], $app['content']);

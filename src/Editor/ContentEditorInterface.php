@@ -1,7 +1,7 @@
 <?php
 namespace Eyf\Happy\Editor;
 
-interface EditorInterface
+interface ContentEditorInterface
 {
     public function getKey();
     public function save(array $data);

@@ -3,7 +3,7 @@ namespace Eyf\Happy\Editor;
 
 use Eyf\Modelify\Repository;
 
-class ModelifyEditor implements EditorInterface
+class ModelifyEditor implements ContentEditorInterface
 {
     protected $repos = array();
 

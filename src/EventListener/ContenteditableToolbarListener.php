@@ -24,13 +24,15 @@ class ContenteditableToolbarListener implements EventSubscriberInterface
     protected $content;
     protected $security;
     protected $twig;
+    protected $menu;
     protected $role;
 
-    public function __construct(ContenteditableService $content, SecurityContextInterface $security, \Twig_Environment $twig, $role = 'ROLE_ADMIN')
+    public function __construct(ContenteditableService $content, SecurityContextInterface $security, \Twig_Environment $twig, array $menu = array(), $role = 'ROLE_ADMIN')
     {
         $this->content = $content;
         $this->security = $security;
         $this->twig = $twig;
+        $this->menu = $menu;
         $this->role = $role;
     }
 
@@ -82,6 +84,7 @@ class ContenteditableToolbarListener implements EventSubscriberInterface
                 '@Contenteditable/toolbar.html.twig',
                 array(
                     'content' => $this->content,
+                    'menu' => $this->menu,
                     'request_pathname' => ltrim($request->getPathInfo(), '/')
                 )
             ))."\n";

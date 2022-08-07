@@ -38,12 +38,6 @@ body.contentedited .content-toolbar {
   font-size: 14px;
 }
 
-.content-toolbar .btn-primary {
-  background-color: #f6c43f;
-  border-color: #f6c43f;
-  color: #000;
-}
-
 .content-toolbar > .container {
   margin-bottom: 10px;
 }

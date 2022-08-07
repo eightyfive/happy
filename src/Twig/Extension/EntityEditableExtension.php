@@ -1,9 +1,9 @@
 <?php
 
-namespace Eyf\Happy\Twig\Extension;
+namespace Happy\Twig\Extension;
 
-use Eyf\Happy\ContenteditableService;
-use Eyf\Happy\Behavior\Editable;
+use Happy\ContenteditableService;
+use Happy\Behavior\Editable;
 
 /**
  * @author Benoit Sagols <benoit.sagols@gmail.com>
@@ -16,8 +16,8 @@ class EntityEditableExtension extends EditableExtension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('editable', array($this, 'editableTextAttr')),
-            new \Twig_SimpleFunction('editable_datetime', array($this, 'editableDatetimeAttr'))
+            new \Twig_SimpleFunction('editable', array($this, 'editableText')),
+            new \Twig_SimpleFunction('editable_attrs', array($this, 'editableAttrs')),
         );
     }
 
@@ -31,27 +31,19 @@ class EntityEditableExtension extends EditableExtension
         return 'entity['.get_class($entity).']['.$entity->getId().']['.$attr.']';
     }
 
-    public function editableDatetimeAttr(Editable $entity, $attr, $format = null)
+    public function editableAttrs(Editable $entity, $attr, $type = null)
     {
-        $contentRaw = $this->getContent($entity, $attr);
         $inputName = $this->getInputName($entity, $attr);
 
-        if ($format) {
-            $date = new \Datetime($contentRaw);
-            $content = $date->format($format);
-        } else {
-            $content = $contentRaw;
-        }
-
-        $this->renderEditableNode($content, $inputName, 'datetime', $contentRaw);
+        $this->renderEditableAttributes($inputName, $type);
     }
 
-    public function editableTextAttr(Editable $entity, $attr, $mode = 'inline')
+    public function editableText(Editable $entity, $attr, $mode = 'inline')
     {
         $content = $this->getContent($entity, $attr);
         $inputName = $this->getInputName($entity, $attr);
 
-        $this->renderEditableNode($content, $inputName, 'text', $mode);
+        $this->renderEditableNode($content, $inputName, 'content', $mode);
     }
 
     /**

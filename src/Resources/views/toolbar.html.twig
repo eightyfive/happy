@@ -5,7 +5,9 @@
 
 <div id="contentToolbar" class="content-toolbar">
     <div class="container">
+        {% if not content.editable %}
         <a href="{{ path(content.prefix ~ '_logout') }}" class="btn btn-link">&times;</a>
+        {% endif %}
         {% if content.editable %}
         <form action="{{ path('_content_save', {pathname: content.pathname}) }}" method="POST" class="save-form">
             <a href="{{ path(content.routeName, content.routeParams) }}" data-action="exit" class="button secondary btn btn-default">Done</a>

@@ -51,6 +51,10 @@ body.contentedited .content-toolbar {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAMAAACDi47UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9sQ/IiIim2pwbQAAABNJREFUeNpiYIADRjgY0mIAAQYAKaQAZQPCk40AAAAASUVORK5CYII=) repeat-x 0 0;
   height: 10px;
 }
+.save-form,
+.button-edit {
+  float: right;
+}
 
 [data-editable]:hover {
   cursor: default!important;

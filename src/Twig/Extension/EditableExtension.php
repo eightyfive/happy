@@ -25,7 +25,7 @@ abstract class EditableExtension extends \Twig_Extension
 
         $tagName = 'span';
 
-        if ($type === 'text') {
+        if ($type === 'content') {
             $tagName = ($typeMode === 'inline') ? 'span' : 'div';
         }
 
@@ -53,6 +53,9 @@ abstract class EditableExtension extends \Twig_Extension
         $attrs = array();
         $attrs['editable'] = $type;
         $attrs['editable-name'] = $inputName;
+        if ($typeMode) {
+            $attrs['editable-'.$type] = $typeMode;
+        }
 
         $str = '';
         foreach ($attrs as $name => $value) {

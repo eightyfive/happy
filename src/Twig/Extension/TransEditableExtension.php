@@ -39,7 +39,7 @@ class TransEditableExtension extends EditableExtension
         $content = $this->translator->trans($id, array(), $domain);
         $inputName = 'trans['.$domain.']['.$id.']';
 
-        return $this->renderEditableNode($content, $inputName, 'text', $mode);
+        return $this->renderEditableNode($content, $inputName, 'content', $mode);
     }
 
     /**

@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
-use Happy\ContenteditableService;
+use Eyf\Happy\ContenteditableService;
 
 class ContenteditableController
 {
